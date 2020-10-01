@@ -7,7 +7,9 @@
                     Pizzaro
                 </title>
                 <link href="{{asset('assets/css/bootstrap.min.css')}}" media="all" rel="stylesheet" type="text/css"/>
-                <link href="{{asset('assets/css/font-awesome.min.css')}}" media="all" rel="stylesheet" type="text/css"/>
+               <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/brands.min.css" integrity="sha512-AMDXrE+qaoUHsd0DXQJr5dL4m5xmpkGLxXZQik2TvR2VCVKT/XRPQ4e/LTnwl84mCv+eFm92UG6ErWDtGM/Q5Q==" crossorigin="anonymous" />
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/solid.min.css" integrity="sha512-QN7X/bUbbeel9bbq6JVNJXk1Zowt+n+QPN+DjhEmTa4TdL1YPCsCey5JrvfRW8xp28LDYgGG/waNVdrhwMQmVQ==" crossorigin="anonymous" />
                 <link href="{{asset('assets/css/animate.min.css')}}" media="all" rel="stylesheet" type="text/css"/>
                 <link href="{{asset('assets/css/font-pizzaro.css')}}" media="all" rel="stylesheet" type="text/css"/>
                 <link href="{{asset('assets/css/style.css')}}" media="all" rel="stylesheet" type="text/css"/>
@@ -54,6 +56,7 @@
         <!-- For demo purposes – can be removed on production : End -->
         <script src="{{asset('assets/js/jquery.min.js')}}" type="text/javascript">
         </script>
+       
         <script src="{{asset('assets/js/tether.min.js')}}" type="text/javascript">
         </script>
         <script src="{{asset('assets/js/bootstrap.min.js')}}" type="text/javascript">

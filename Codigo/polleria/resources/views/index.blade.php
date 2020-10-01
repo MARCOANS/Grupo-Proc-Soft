@@ -11,28 +11,35 @@
         <main class="site-main" id="main">
             <div class="home-v1-slider">
                 <div class="owl-carousel owl-inner-nav owl-ui-sm" id="owl-main">
-                    <div class="item slider-1" style="background-image: url({{asset('assets/images/homepage-slider-1.jpg')}});">
-                        <div class="caption fadeIn">
-                            <div class="pre-title">
+                    <div class="item slider-2" style="background-image: url({{asset('assets/images/homepage-slider-1.jpg')}});">
+                    <div class="caption fadeIn">
+                            <div class="price-tag">
                                 <div class="border front">
                                 </div>
-                                <div class="lable">
-                                    New!
-                                </div>
-                                <div class="pre-title-value">
-                                    LIMITED TIME OFFER
+                                <div class="price-tag-value">
+                                    <div class="price">
+                                        <span class="symbol">
+                                           S/.
+                                        </span>
+                                       39
+                                        <span class="slider-amount">
+                                            99
+                                            <br>
+                                                
+                                            </br>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="border back">
                                 </div>
                             </div>
                             <div class="title">
-                                SUPREME BBQ
+                               Pollo entero
                             </div>
                             <div class="sub-title">
-                                CHICKEN
-                            </div>
-                            <div class="bottom-caption">
-                                Bacon  -  Grilled Onions  -  Potatos  -  Mozarella  -  BBQ Sauce
+                                + Papas
+                                + Gaseosa
+
                             </div>
                         </div>
                         <!-- /.caption -->
@@ -46,15 +53,13 @@
                                 <div class="price-tag-value">
                                     <div class="price">
                                         <span class="symbol">
-                                            $
+                                            S/.
                                         </span>
                                         12
                                         <span class="slider-amount">
                                             99
                                             <br>
-                                                <span class="price-only">
-                                                    only
-                                                </span>
+                                                
                                             </br>
                                         </span>
                                     </div>
@@ -63,51 +68,45 @@
                                 </div>
                             </div>
                             <div class="title">
-                                ORYGINAL ITALY
+                               Pollo y carnes a la parrilla
                             </div>
-                            <div class="sub-title">
-                                PIZZA LOVERS SET
-                            </div>
+                           
                         </div>
                         <!-- /.caption -->
                     </div>
                     <!-- /.item -->
-                    <div class="item slider-3" style="background-image: url({{asset('assets/images/homepage-slider-3.jpg')}});">
-                        <div class="caption fadeIn">
-                            <div class="pre-title">
-                                DISCOVER WHAT'S NEW
+                    <div class="item slider-2" style="background-image: url({{asset('assets/images/homepage-slider-3.jpg')}});">
+                     <div class="caption fadeIn">
+                            <div class="price-tag">
+                                <div class="border front">
+                                </div>
+                                <div class="price-tag-value">
+                                    <div class="price">
+                                        <span class="symbol">
+                                           S/.
+                                        </span>
+                                        12
+                                        <span class="slider-amount">
+                                            99
+                                            <br>
+                                                
+                                            </br>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="border back">
+                                </div>
                             </div>
                             <div class="title">
-                                <span>
-                                    and
-                                </span>
-                                order
-                                <span>
-                                    with
-                                    <br>
-                                        visa
-                                    </br>
-                                </span>
-                                online
+                                Mostrito
                             </div>
+                           
                         </div>
                         <!-- /.caption -->
                     </div>
                     <!-- /.item -->
-                    <div class="item slider-4" style="background-image: url({{asset('assets/images/homepage-slider-4.jpg')}});">
-                        <div class="caption fadeIn">
-                            <div class="pre-title">
-                                EXCLUSIVE OFFER
-                            </div>
-                            <div class="title">
-                                <span>
-                                    VEGGIE FUN
-                                </span>
-                                <br>
-                                    DELICIOUS SUMMER!
-                                </br>
-                            </div>
-                        </div>
+                    <div class="item slider-2" style="background-image: url({{asset('assets/images/homepage-slider-4.jpg')}});">
+                     
                         <!-- /.caption -->
                     </div>
                     <!-- /.item -->
