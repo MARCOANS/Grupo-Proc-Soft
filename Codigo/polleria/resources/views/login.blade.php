@@ -8,7 +8,7 @@
 @section('content')
    <div class="col-full">
                <div class="pizzaro-breadcrumb">
-                  <nav class="woocommerce-breadcrumb" ><a href="index.html">Home</a><span class="delimiter"><i class="po po-arrow-right-slider"></i></span>My Account</nav>
+                  <nav class="woocommerce-breadcrumb" ><a href="index.html">Inicio</a><span class="delimiter"><i class="po po-arrow-right-slider"></i></span>Mi cuenta</nav>
                </div>
                <!-- .woocommerce-breadcrumb -->
                <div id="primary" class="content-area">
@@ -22,13 +22,13 @@
                                     <div class="u-column1 col-1">
                                        <h2>Login</h2>
                                        <form  class="login">
-                                          <p class="before-login-text">Welcome back! Sign in to your account</p>
+                                       
                                           <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                             <label for="username">Username or email address <span class="required">*</span></label>
+                                             <label for="username">Usuario <span class="required">*</span></label>
                                              <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" value="" />
                                           </p>
                                           <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                             <label for="password">Password <span class="required">*</span></label>
+                                             <label for="password">Contraseña <span class="required">*</span></label>
                                              <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" />
                                           </p>
                                           <p class="form-row">
@@ -36,24 +36,24 @@
                                              <input type="hidden" name="_wp_http_referer" value="/pizzaro/my-account/" />
                                              <input type="submit" class="woocommerce-Button button" name="login" value="Login" />
                                              <label for="rememberme" class="inline">
-                                             <input class="woocommerce-Input woocommerce-Input--checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> Remember me
+                                             <input class="woocommerce-Input woocommerce-Input--checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> Recordarme
                                              </label>
                                           </p>
                                           <p class="woocommerce-LostPassword lost_password">
-                                             <a href="#">Lost your password?</a>
+                                             <a href="#">Olvidaste tu contraseña?</a>
                                           </p>
                                        </form>
                                     </div>
                                     <div class="u-column2 col-2">
-                                       <h2>Register</h2>
+                                       <h2>Registrarse</h2>
                                        <form  class="register">
-                                          <p class="before-register-text">Create your very own account</p>
+                                         
                                           <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                             <label for="reg_email">Email address <span class="required">*</span></label>
+                                             <label for="reg_email">Email <span class="required">*</span></label>
                                              <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="" />
                                           </p>
                                           <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                             <label for="reg_password">Password <span class="required">*</span></label>
+                                             <label for="reg_password">Contraseña <span class="required">*</span></label>
                                              <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
                                           </p>
                                           <!-- Spam Trap -->
@@ -64,16 +64,9 @@
                                           <p class="woocomerce-FormRow form-row">
                                              <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="1fe13dcb6d" />
                                              <input type="hidden" name="_wp_http_referer" value="/pizzaro/my-account/" />
-                                             <input type="submit" class="woocommerce-Button button" name="register" value="Register" />
+                                             <input type="submit" class="woocommerce-Button button" name="register" value="Registrarse" />
                                           </p>
-                                          <div class="register-benefits">
-                                             <h3>Sign up today and you will be able to :</h3>
-                                             <ul>
-                                                <li>Speed your way through checkout</li>
-                                                <li>Track your orders easily</li>
-                                                <li>Keep a record of all your purchases</li>
-                                             </ul>
-                                          </div>
+                                         
                                        </form>
                                     </div>
                                  </div>
