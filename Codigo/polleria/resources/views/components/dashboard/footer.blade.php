@@ -2,10 +2,10 @@
     <div class="footer-section f-section-1">
         <p class="">
             Copyright © 2020
-            <a href="https://designreset.com" target="_blank">
-                DesignReset
+            <a href="#" target="_blank">
+               Polleria el roble
             </a>
-            , All rights reserved.
+            , Todos los derechos reservados.
         </p>
     </div>
     <div class="footer-section f-section-2">

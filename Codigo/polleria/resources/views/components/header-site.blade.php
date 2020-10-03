@@ -30,21 +30,22 @@
                 <div class="primary-navigation">
                     <ul aria-expanded="false" class="menu nav-menu" id="menu-main-menu">
                         <li class="menu-item">
-                            <a href="shop-grid-3-column.html">
+                            <a href="#">
                                 Empieza tu pedido
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="shop-grid-3-column.html">
+                            <a href="#">
                                 Nosotros
                             </a>
                         </li>
-                        <li class="menu-item">
-                            <a href="shop-grid-3-column.html">
-                                Locales
+                      
+                        
+                       <li class="menu-item">
+                            <a href="{{ route('login') }}">
+                                Login
                             </a>
                         </li>
-                       
                     </ul>
                 </div>
                 <div class="handheld-navigation">
@@ -53,14 +54,14 @@
                     </span>
                     <ul class="menu">
                         <li class="menu-item ">
-                            <a href="shop-grid-3-column.html">
+                            <a href="#">
                                 <i class="fas fa-drumstick-bite">
                                 </i>
                                 Pollos
                             </a>
                         </li>
                         <li class="menu-item ">
-                            <a href="shop-grid-3-column.html">
+                            <a href="#">
                                 <i class="fas fa-dumpster-fire">
                                 </i>
                                 Parrillas
@@ -74,14 +75,14 @@
                             </a>
                         </li>
                         <li class="menu-item ">
-                            <a href="shop-grid-3-column.html">
+                            <a href="#">
                                 <i class="far fa-coffee">
                                 </i>
                                 Bebidas
                             </a>
                         </li>
                         <li class="menu-item ">
-                            <a href="shop-grid-3-column.html">
+                            <a href="#">
                                 <i class="fas fa-percentage">
                                 </i>
                                 Promociones
@@ -103,7 +104,7 @@
                 </div>
                 <ul class="site-header-cart-v2 menu">
                     <li class="cart-content ">
-                        <a href="cart.html" title="View your shopping cart">
+                        <a href="#" title="View your shopping cart">
                             <i class="po po-scooter">
                             </i>
                             <span>
@@ -112,7 +113,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="cart.html" title="View your shopping cart">
+                                <a href="#" title="View your shopping cart">
                                     <span class="count">
                                         2 items
                                     </span>
@@ -130,27 +131,27 @@
             <nav aria-label="Secondary Navigation" class="secondary-navigation">
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="shop-grid-3-column.html">
+                        <a href="#">
                             <i class="fas fa-drumstick-bite">
                             </i>
                             Pollos
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="shop-grid-3-column.html">
+                        <a href="#">
                             <i class="fas fa-dumpster-fire">
                             </i>
                             Parrillas
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="shop-grid-3-column.html">
+                        <a href="#">
                             <i class="far fa-salad">
                             </i>
                             Guarniciones
                         </a>
                     </li>
-                    <li class="menu-item">
+                    <li class="#">
                         <a href="shop-grid-3-column.html">
                             <i class="fas fa-glass-whiskey">
                             </i>
@@ -158,7 +159,7 @@
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="shop-grid-3-column.html">
+                        <a href="#">
                             <i class="fas fa-percentage">
                             </i>
                             Promociones

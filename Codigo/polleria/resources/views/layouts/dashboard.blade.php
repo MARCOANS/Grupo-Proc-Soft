@@ -5,7 +5,7 @@
             <meta content="IE=edge" http-equiv="X-UA-Compatible">
                 <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
                     <title>
-                        CORK Admin Template - Forms Basic
+                      Polleria el roble
                     </title>
                     <link href="{{ asset('assets/dashboard/images/favicon.ico')}}" rel="icon" type="image/x-icon"/>
                     <link href="{{ asset('assets/dashboard/css/loader.css')}}" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,14 @@
                     <link href="{{ asset('assets/dashboard/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
                     <link href="{{ asset('assets/dashboard/css/plugins.css')}}" rel="stylesheet" type="text/css"/>
                     <!-- END GLOBAL MANDATORY STYLES -->
+                    <link href="{{ asset('assets/dashboard/css/regular.css" rel="stylesheet')}}"/>
+                    <link href="{{ asset('assets/dashboard/css/fontawesome.css" rel="stylesheet')}}"/>
                     <!--  BEGIN CUSTOM STYLE FILE  -->
                     <link href="{{ asset('assets/dashboard/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css"/>
-                      <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/css/select2.min.css')}}">
-                    <!--  END CUSTOM STYLE FILE  -->
-                    @yield('style')
+                    <link href="{{ asset('assets/dashboard/css/select2.min.css')}}" rel="stylesheet" type="text/css">
+                        <!--  END CUSTOM STYLE FILE  -->
+                        @yield('style')
+                    </link>
                 </meta>
             </meta>
         </meta>
@@ -84,7 +87,9 @@
     <!-- END GLOBAL MANDATORY SCRIPTS -->
     <script src="{{ asset('assets/dashboard/js/scrollspyNav.js') }}">
     </script>
-        <script src="{{ asset('assets/dashboard/js/select2.min.js')}}"></script>
-    <script src="{{ asset('assets/dashboard/js/custom-select2.js')}}"></script>
+    <script src="{{ asset('assets/dashboard/js/select2.min.js')}}">
+    </script>
+    <script src="{{ asset('assets/dashboard/js/custom-select2.js')}}">
+    </script>
     @yield('script')
 </body>

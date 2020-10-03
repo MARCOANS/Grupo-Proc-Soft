@@ -152,7 +152,7 @@ code { color: #e7515a; }
 .navbar {
     padding: 0;
     min-height: 80px;
-    background: #445ede;
+    background: #c00a27;
     -webkit-transition: .3s ease all;
     transition: .3s ease all;
     -webkit-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
@@ -187,9 +187,9 @@ code { color: #e7515a; }
     height: 80px;
     display: flex;
     justify-content: space-around;
-    background: #fff;
-    border-right: 1px solid #445ede;
-    background-image: linear-gradient(to right, #445ede 0%, #304aca 100%);
+   background: #fff;
+    border-right: 1px solid #edeef0;
+    background-image: linear-gradient(to right, #c00a27 0%, #c00a27 100%);
 }
 .header-container .navbar-nav.theme-brand .theme-logo {
     align-self: center;
@@ -665,11 +665,11 @@ code { color: #e7515a; }
       0 2px 16px rgba(0, 0, 0, 0.14);
 }
 .navbar .navbar-item .nav-item .form-inline.search .search-form-control {
-    border: 1px solid #304aca;
+    border: 1px solid #c00a27;
     width: 100%;
     width: 425px;
     height: 50px;
-    background: #304aca;
+    background: #c00a27;
 }
 .navbar .navbar-item .nav-item form.form-inline input.search-form-control::-webkit-input-placeholder {
     color: #bfc9d4;
