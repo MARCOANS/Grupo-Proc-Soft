@@ -1038,7 +1038,7 @@ color: #e0e6ed; }
     font-weight: 700;
 }
 #sidebar ul.menu-categories li.menu.active > .dropdown-toggle {
-    background: #304aca;
+    background: #d01628;
 }
 #sidebar ul.menu-categories li.menu.active > .dropdown-toggle svg.feather-chevron-right {
     transform: rotate(90deg);

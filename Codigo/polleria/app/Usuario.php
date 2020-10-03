@@ -10,9 +10,4 @@ class Usuario extends Authenticatable
     protected $primaryKey = 'id_usuario';
     public $timestamps    = false;
 
-    /* public function setPasswordAttribute($password)
-{
-
-$this->attributes['usu_password'] = bcrypt($password);
-}*/
 }
