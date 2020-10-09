@@ -7,32 +7,32 @@
                         <div class="kc-css-126640 kc_shortcode kc_wrap_instagram kc_ins_col_6">
                             <ul class="row">
                                 <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
-                                    <a href="https://www.instagram.com/p/BO4Gyf2hTkr/" target="_blank">
+                                    <a href="#" target="_blank">
                                         <img alt="" src="{{asset('assets/images/1.jpg')}}"/>
                                     </a>
                                 </li>
                                 <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
-                                    <a href="https://www.instagram.com/p/BO4Gtf1BCmM/" target="_blank">
+                                    <a href="#" target="_blank">
                                         <img alt="" src="{{asset('assets/images/2.jpg')}}"/>
                                     </a>
                                 </li>
                                 <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
-                                    <a href="https://www.instagram.com/p/BO4GnvhBqNt/" target="_blank">
+                                    <a href="#" target="_blank">
                                         <img alt="" src="{{asset('assets/images/3.jpg')}}"/>
                                     </a>
                                 </li>
                                 <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
-                                    <a href="https://www.instagram.com/p/BO4GhsuhQE4/" target="_blank">
+                                    <a href="#" target="_blank">
                                         <img alt="" src="{{asset('assets/images/4.jpg')}}"/>
                                     </a>
                                 </li>
                                 <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
-                                    <a href="https://www.instagram.com/p/BO4F_ZbBuxI/" target="_blank">
+                                    <a href="#" target="_blank">
                                         <img alt="" src="{{asset('assets/images/5.jpg')}}"/>
                                     </a>
                                 </li>
                                 <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
-                                    <a href="https://www.instagram.com/p/BO4F8fLhgkp/" target="_blank">
+                                    <a href="#" target="_blank">
                                         <img alt="" src="{{asset('assets/images/6.jpg')}}"/>
                                     </a>
                                 </li>
@@ -74,7 +74,7 @@
             </ul>
         </div>
         <div class="footer-logo">
-            <a class="custom-logo-link" href="index.html" rel="home">
+            <a class="custom-logo-link" href="{{ route('Site.Index') }}" rel="home">
                   <img src="{{asset('assets/images/logo.png')}}">
                     </img>
             </a>
@@ -103,13 +103,13 @@
         <div class="pizzaro-handheld-footer-bar">
             <ul class="columns-3">
                 <li class="my-account">
-                    <a href="login-and-register.html">
+                    <a href="#">
                         My Account
                     </a>
                 </li>
                 
                 <li class="cart">
-                    <a class="footer-cart-contents" href="cart.html" title="View your shopping cart">
+                    <a class="footer-cart-contents" href="#" title="View your shopping cart">
                         <span class="count">
                             2
                         </span>

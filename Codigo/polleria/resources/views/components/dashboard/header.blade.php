@@ -42,6 +42,13 @@
             </li>
         </ul>
         <ul class="navbar-item flex-row navbar-dropdown">
+            <li class="nav-item dropdown apps-dropdown more-dropdown ">
+                <a class="btn btn-dark mb-2" href="{{ route('Site.Index') }}" id="appSection">
+                    Ir al sitio
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-item flex-row navbar-dropdown">
             <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
                 <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle user" data-toggle="dropdown" href="javascript:void(0);" id="userProfileDropdown">
                     <svg class="feather feather-settings" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

@@ -6,8 +6,9 @@
 @endsection
 
 @section('menu')
-@component('components.dashboard.menu')
+@component('components.dashboard.menu',['activeUsuario'=>'active','expandedUsuario'=>'true','showUsuario'=>'show','activeUsuarioCreate'=>'active'])
 @endcomponent
+@endsection
 
 @section('style')
 <link href="{{ asset('assets/dashboard/css/file-upload-with-preview.min.css') }}" rel="stylesheet" type="text/css"/>
@@ -27,14 +28,14 @@
                 </div>
             </div>
             <div class="widget-content widget-content-area">
-                <form id="form-registro" novalidate="">
+                <form id="form-registro" >
                     <input id="token" name="_token" type="hidden" value="{{csrf_token() }}"/>
                     <div class="form-group row mb-4">
                         <label class="col-sm-2 col-form-label col-form-label-sm text-right" for="colFormLabelSm">
                             Nombre
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="nombre" type="text">
+                            <input class="form-control form-control-sm" name="nombre" type="text" required="">
                             </input>
                         </div>
                     </div>
@@ -43,7 +44,7 @@
                             Apellido Paterno
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="paterno" type="text">
+                            <input class="form-control form-control-sm" name="paterno" type="text" required="">
                             </input>
                         </div>
                     </div>
@@ -52,7 +53,7 @@
                             Apellido Materno
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="materno" type="text">
+                            <input class="form-control form-control-sm" name="materno" type="text" required="">
                             </input>
                         </div>
                     </div>
@@ -61,7 +62,7 @@
                             Correo
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="email" type="text">
+                            <input class="form-control form-control-sm" name="email" type="email" required="">
                             </input>
                         </div>
                     </div>
@@ -70,7 +71,7 @@
                             Telefono
                         </label>
                         <div class="col-sm-6">
-                            <input class="form-control form-control-sm" name="telefono" type="text">
+                            <input class="form-control form-control-sm" name="telefono" type="text" required="">
                             </input>
                         </div>
                     </div>
@@ -79,7 +80,7 @@
                             Nombre de usuario
                         </label>
                         <div class="col-sm-6">
-                            <input class="form-control form-control-sm" name="usuario" type="text">
+                            <input class="form-control form-control-sm" name="usuario" type="text" required="">
                             </input>
                         </div>
                     </div>
@@ -88,7 +89,7 @@
                             Contraseña
                         </label>
                         <div class="col-sm-6">
-                            <input class="form-control form-control-sm" name="password" type="text">
+                            <input class="form-control form-control-sm" name="password" type="text" required="">
                             </input>
                         </div>
                     </div>

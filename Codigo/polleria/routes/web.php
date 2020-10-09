@@ -26,6 +26,8 @@ Route::post('login', 'Auth\LoginController@authenticate')->name('Authenticate');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 
+Route::get('ver/{name}/{categoria}', 'Admin\CatalogoController@productos')->name('Site.Catalogo');
+
 Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'Admin.'], function () {

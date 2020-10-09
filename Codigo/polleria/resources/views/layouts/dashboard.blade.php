@@ -7,7 +7,7 @@
                     <title>
                       Polleria el roble
                     </title>
-                    <link href="{{ asset('assets/dashboard/images/favicon.ico')}}" rel="icon" type="image/x-icon"/>
+                    <link href="{{asset('assets/images/logo.png')}}" rel="icon" type="image/x-icon"/>
                     <link href="{{ asset('assets/dashboard/css/loader.css')}}" rel="stylesheet" type="text/css"/>
                     <script src="{{ asset('assets/dashboard/js/loader.js')}}">
                     </script>

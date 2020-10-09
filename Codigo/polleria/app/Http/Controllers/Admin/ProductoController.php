@@ -4,30 +4,30 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Producto;
-use DB;
 use Illuminate\Http\Request;
 use Storage;
+
 class ProductoController extends Controller
 {
 
     public function getAll()
     {
 
-        $productos = Producto::All();
+        $productos = new Producto;
 
         $output = array('data' => array());
 
-        foreach ($productos as $producto) {
+        foreach ($productos->listar() as $producto) {
 
             $actionButton = '
              <div class="">
-                    <a class="text-blue"  href="' . route("Admin.Usuario.Show", ["usuario" => $producto->id_producto]) . '" >
+                    <a class="text-blue"  href="' . route("Admin.Producto.Show", ["producto" => $producto->id_producto]) . '" >
                     <i class="ace-icon fa fa-search-plus bigger-130" style="font-size: 20px;"></i>
                     </a>
-                    <a class="text-success" href="' . route("Admin.Usuario.Edit", ["usuario" => $producto->id_producto]) . '" >
+                    <a class="text-success" href="' . route("Admin.Producto.Edit", ["producto" => $producto->id_producto]) . '" >
                     <i class="fa fa-pen bigger-130" style="font-size: 20px;"></i>
                     </a>
-                    <a class="text-danger" data-target="#modal-destroy" href="" data-toggle="modal"  onclick="deleteS(' . "'" . route('Admin.Usuario.Destroy', ['usuario' => $producto->id_producto]) . "'" . ')">
+                    <a class="text-danger" data-target="#modal-destroy" href="" data-toggle="modal"  onclick="deleteProducto(' . "'" . route('Admin.Producto.Destroy', ['producto' => $producto->id_producto]) . "'" . ')">
                     <i class="fa fa-trash bigger-130" style="font-size: 20px;"></i>
                     </a>
             </div>';
@@ -38,7 +38,7 @@ class ProductoController extends Controller
                 $producto->prod_descripcion,
                 $producto->prod_precio,
                 $producto->datosCategoria->cat_nombre,
-               '<span><img width="70" src="' . url(Storage::url('sistem/photos/' . $producto->prod_imagen)) . '" alt="avatar"></span>',
+                '<span><img width="70"  height ="60" src="' . url(Storage::url('sistem/photos/' . $producto->prod_imagen)) . '" alt="avatar"></span>',
                 $actionButton,
 
             );
@@ -77,12 +77,9 @@ class ProductoController extends Controller
 
         $rutaImg = '';
         if ($request->hasFile('imagen')) {
-            $img = $request->file('imagen');
-
+            $img  = $request->file('imagen');
             $nomb = 'foto-producto-' . md5(uniqid(mt_rand())) . "." . $img->getClientOriginalExtension();
-
             \Storage::disk('fotografias')->put($nomb, \File::get($img));
-
             $rutaImg = $nomb;
         }
 
@@ -94,7 +91,8 @@ class ProductoController extends Controller
             $rutaImg,
         ];
 
-        $data = DB::select('call SP_A_T_Producto (?, ?,?,?,?)', $data);
+        $producto = new Producto;
+        $producto->guardar($data);
         return response()->json(['message' => 'Registro creado']);
     }
 
@@ -106,7 +104,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+
     }
 
     /**
@@ -117,7 +115,7 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-        //
+        return view('admin.producto.edit', ['producto' => $producto]);
     }
 
     /**
@@ -129,7 +127,18 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        //
+
+        $producto->update($request->all());
+        if ($request->hasFile('prod_imagen')) {
+            $img  = $request->file('prod_imagen');
+            $nomb = 'foto-producto-' . md5(uniqid(mt_rand())) . "." . $img->getClientOriginalExtension();
+            \Storage::disk('fotografias')->put($nomb, \File::get($img));
+            $rutaImg = $nomb;
+            $producto->update(['prod_imagen' => $rutaImg]);
+
+        }
+
+        return response()->json(['message' => 'Registro actualizado correctamente']);
     }
 
     /**
@@ -140,6 +149,8 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+        $producto->prod_deleted = 1;
+        $producto->save();
+        return response()->json(['message' => 'Registro eliminado correctamente']);
     }
 }
