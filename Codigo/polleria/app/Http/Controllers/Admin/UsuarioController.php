@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Usuario;
-use DB;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -13,10 +12,10 @@ class UsuarioController extends Controller
     public function getAll()
     {
 
-        $usuarios = Usuario::All();
+        $usuarios = new Usuario;
 
         $output = array('data' => array());
-        foreach ($usuarios as $usuario) {
+        foreach ($usuarios->listar() as $usuario) {
 
             $actionButton = '
              <div class="">
@@ -26,7 +25,7 @@ class UsuarioController extends Controller
                     <a class="text-success" href="' . route("Admin.Usuario.Edit", ["usuario" => $usuario->id_usuario]) . '" >
                     <i class="fa fa-pen bigger-130" style="font-size: 20px;"></i>
                     </a>
-                    <a class="text-danger" data-target="#modal-destroy" href="" data-toggle="modal"  onclick="deleteS(' . "'" . route('Admin.Usuario.Destroy', ['usuario' => $usuario->id_usuario]) . "'" . ')">
+                    <a class="text-danger" data-target="#modal-destroy" href="" data-toggle="modal"  onclick="deleteUsuario(' . "'" . route('Admin.Usuario.Destroy', ['usuario' => $usuario->id_usuario]) . "'" . ')">
                     <i class="fa fa-trash bigger-130" style="font-size: 20px;"></i>
                     </a>
             </div>';
@@ -38,9 +37,6 @@ class UsuarioController extends Controller
                 $usuario->usu_apmaterno,
                 $usuario->usu_correo,
                 $usuario->usu_telefono,
-                /*    '
-                <a class="venobox" href="' . url(Storage::url('sistem/photos/' . $datosusuario['foto'])) . '"><img class="thumbnail border border-secondary rounded-circle" height="40" width="40" src="' . url(Storage::url('sistem/photos/' . $datosusuario['foto'])) . '"/></a>',*/
-                //$this->usuario->estadoacademico($usuario->estadoacademico),
                 $actionButton,
 
             );
@@ -87,7 +83,8 @@ class UsuarioController extends Controller
             $request->telefono,
         ];
 
-        $data = DB::select('call SP_A_T_Usuario (?, ?,?,?,?,?,?)', $data);
+        $usuario = new Usuario;
+        $usuario->guardar($data);
         return response()->json(['message' => 'Registro creado']);
     }
 
@@ -99,7 +96,7 @@ class UsuarioController extends Controller
      */
     public function show(Usuario $usuario)
     {
-        //
+
     }
 
     /**
@@ -110,7 +107,7 @@ class UsuarioController extends Controller
      */
     public function edit(Usuario $usuario)
     {
-        //
+        return view('admin.usuario.edit', ['usuario' => $usuario]);
     }
 
     /**
@@ -122,7 +119,10 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, Usuario $usuario)
     {
-        //
+
+        $usuario->update($request->all());
+        return response()->json(['message' => 'Registro actualizado correctamente']);
+
     }
 
     /**
@@ -133,9 +133,10 @@ class UsuarioController extends Controller
      */
     public function destroy(Usuario $usuario)
     {
-        //
+        $usuario->usu_deleted = 1;
+        $usuario->save();
+
+        return response()->json(['message' => 'Registro eliminado correctamente']);
     }
-
-
 
 }

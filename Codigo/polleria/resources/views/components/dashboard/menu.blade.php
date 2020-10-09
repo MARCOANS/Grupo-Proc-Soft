@@ -29,8 +29,8 @@
         <div class="shadow-bottom">
         </div>
         <ul class="list-unstyled menu-categories" id="accordionExample">
-            <li class="menu active">
-                <a aria-expanded="true" class="dropdown-toggle" data-toggle="collapse" href="#forms">
+            <li class="menu {{ $activeUsuario ?? '' }}">
+                <a aria-expanded="{{ $expandedUsuario ?? 'false' }}" class="dropdown-toggle" data-toggle="collapse" href="#forms">
                     <div class="">
                         <svg class="feather feather-clipboard" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
@@ -49,21 +49,26 @@
                         </svg>
                     </div>
                 </a>
-                <ul class="collapse submenu recent-submenu list-unstyled show" data-parent="#accordionExample" id="forms">
-                    <li class="active">
+                <ul class="collapse submenu recent-submenu list-unstyled {{ $showUsuario ?? '' }}" data-parent="#accordionExample" id="forms">
+                    <li class="{{ $activeUsuarioIndex ?? '' }}">
                         <a href="{{ route('Admin.Usuario.Index') }}">
                             Todos
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ $activeUsuarioCreate ?? '' }}">
                         <a href="{{ route('Admin.Usuario.Create') }}">
                             Nuevo
                         </a>
                     </li>
+                    <li class="{{ $activeUsuarioEdit ?? '' }}">
+                        <a href="#">
+                            Editar
+                        </a>
+                    </li>
                 </ul>
             </li>
-            <li class="menu ">
-                <a aria-expanded="false" class="dropdown-toggle" data-toggle="collapse" href="#forms">
+            <li class="menu {{ $activeProducto ?? '' }}">
+                <a aria-expanded="{{ $expandedProducto ?? 'false'}}" class="dropdown-toggle" data-toggle="collapse" href="#productos">
                     <div class="">
                         <svg class="feather feather-clipboard" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
@@ -82,15 +87,20 @@
                         </svg>
                     </div>
                 </a>
-                <ul class="collapse submenu recent-submenu list-unstyled " data-parent="#accordionExample" id="forms">
-                    <li class="">
-                        <a href="#">
+                <ul class="collapse submenu recent-submenu list-unstyled {{ $showProducto ?? '' }}" data-parent="#accordionExample" id="productos">
+                    <li class="{{ $activeProductoTodos ?? '' }}">
+                        <a href="{{ route('Admin.Producto.Index') }}">
                             Todos
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ $activeProductoNuevo ?? '' }}">
                         <a href="{{ route('Admin.Producto.Create') }}">
                             Nuevo
+                        </a>
+                    </li>
+                     <li class="{{ $activeProductoEdit ?? '' }}">
+                        <a href="#">
+                            Editar
                         </a>
                     </li>
                 </ul>

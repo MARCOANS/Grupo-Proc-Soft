@@ -8,7 +8,7 @@
         </a>
         <div class="header-wrap">
             <div class="site-branding">
-                <a class="custom-logo-link" href="index.html" rel="home">
+                <a class="custom-logo-link" href="{{ route('Site.Index') }}" rel="home">
                     <img src="{{asset('assets/images/logo.png')}}">
                     </img>
                 </a>
@@ -54,35 +54,35 @@
                     </span>
                     <ul class="menu">
                         <li class="menu-item ">
-                            <a href="#">
+                            <a href="{{ route('Site.Catalogo',['name'=>'pollos','categoria'=>'1']) }}">
                                 <i class="fas fa-drumstick-bite">
                                 </i>
                                 Pollos
                             </a>
                         </li>
                         <li class="menu-item ">
-                            <a href="#">
+                            <a href="{{ route('Site.Catalogo',['name'=>'parrillas','categoria'=>'2']) }}">
                                 <i class="fas fa-dumpster-fire">
                                 </i>
                                 Parrillas
                             </a>
                         </li>
                         <li class="menu-item ">
-                            <a href="shop-grid-3-column.html">
+                            <a href="{{ route('Site.Catalogo',['name'=>'guarniciones','categoria'=>'3']) }}">
                                 <i class="po po-salads">
                                 </i>
                                 Guarniciones
                             </a>
                         </li>
                         <li class="menu-item ">
-                            <a href="#">
+                            <a href="{{ route('Site.Catalogo',['name'=>'bebidas','categoria'=>'4']) }}">
                                 <i class="far fa-coffee">
                                 </i>
                                 Bebidas
                             </a>
                         </li>
                         <li class="menu-item ">
-                            <a href="#">
+                            <a href="{{ route('Site.Catalogo',['name'=>'promociones','categoria'=>'5']) }}">
                                 <i class="fas fa-percentage">
                                 </i>
                                 Promociones
@@ -131,35 +131,35 @@
             <nav aria-label="Secondary Navigation" class="secondary-navigation">
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="#">
+                        <a href="{{ route('Site.Catalogo',['name'=>'pollos','categoria'=>'1']) }}">
                             <i class="fas fa-drumstick-bite">
                             </i>
                             Pollos
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#">
+                        <a href="{{ route('Site.Catalogo',['name'=>'parrillas','categoria'=>'2']) }}">
                             <i class="fas fa-dumpster-fire">
                             </i>
                             Parrillas
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#">
+                        <a href="{{ route('Site.Catalogo',['name'=>'guarniciones','categoria'=>'3']) }}">
                             <i class="far fa-salad">
                             </i>
                             Guarniciones
                         </a>
                     </li>
-                    <li class="#">
-                        <a href="shop-grid-3-column.html">
+                    <li class="menu-item">
+                        <a href="{{ route('Site.Catalogo',['name'=>'bebidas','categoria'=>'4']) }}">
                             <i class="fas fa-glass-whiskey">
                             </i>
                             Bebidas
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#">
+                        <a href="{{ route('Site.Catalogo',['name'=>'promociones','categoria'=>'5']) }}">
                             <i class="fas fa-percentage">
                             </i>
                             Promociones

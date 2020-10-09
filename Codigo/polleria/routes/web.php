@@ -17,23 +17,23 @@ Route::get('/', function () {
     return view('index');
 })->name('Site.Index');
 
-
- 
 Route::get('home', function () {
-   return redirect('/admin/usuario');
+    return redirect('/admin/usuario');
 });
 
-
-Route::get('/login', 'Auth\LoginController@login')->name('login');//->middleware('guest');;
+Route::get('/login', 'Auth\LoginController@login')->name('login')->middleware('guest');
 Route::post('login', 'Auth\LoginController@authenticate')->name('Authenticate');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 
+Route::get('ver/{name}/{categoria}', 'Admin\CatalogoController@productos')->name('Site.Catalogo');
+
+Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'Admin.'], function () {
 
     Route::group(['prefix' => 'producto'], function () {
-        Route::get('get', 'ProductoController@getAll')->name('Producto.Retrieve');
+        Route::get('get', 'ProductoController@getAll')->name('Producto.GetAll');
         Route::post('store2', 'ProductoController@store2')->name('Producto.Store2');
         Route::get('searchliveProducto', 'ProductoController@SearchLive')->name('Producto.Search');
 
@@ -72,6 +72,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'Admin.'], fu
 
 });
 
+});
 //Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
