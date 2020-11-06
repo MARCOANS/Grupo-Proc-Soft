@@ -73,6 +73,16 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
 
+        $countUsu = Usuario::where(['usu_correo' => $request->usuario])
+                             ->orWhere(['usu_login' => $request->usuario])
+                             ->count();
+                             
+        if ($countUsu > 0) {
+
+            return response()->json(['message' => 'El usuario ya existe'], 422);
+        }
+
+
         $data = [
             $request->nombre,
             $request->paterno,

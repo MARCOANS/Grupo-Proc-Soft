@@ -29,7 +29,8 @@
             </div>
             <div class="widget-content widget-content-area">
                 <form id="form-registro">
-                    <input name="_method" type="hidden" value="PUT"/>
+                   {{ method_field('PUT') }}
+                     
                     <input id="token" name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="form-group row mb-4">
                         <label class="col-sm-2 col-form-label col-form-label-sm text-right" for="colFormLabelSm">
@@ -109,16 +110,16 @@
 
 
         $("#form-registro").submit(function(e) {
-    event.preventDefault();
+  
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
-    var form = $(this);
+    var form = $(this); 
     
     
     $.ajax({
            type: "POST",
-           url: '{{ route('Admin.Usuario.Edit',['usuario' => $usuario]) }}',
+           url: '{{ route('Admin.Usuario.Update',['usuario' => $usuario]) }}',
             dataType:'json',
            data: form.serialize(), // serializes the form's elements.
            success: function(data)

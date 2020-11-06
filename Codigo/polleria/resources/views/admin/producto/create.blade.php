@@ -53,7 +53,7 @@
                             Precio
                         </label>
                         <div class="col-sm-2">
-                            <input class="form-control form-control-sm" name="precio" required="" type="number">
+                            <input class="form-control form-control-sm" name="precio" required="" type="number" min="1">
                             </input>
                         </div>
                     </div>

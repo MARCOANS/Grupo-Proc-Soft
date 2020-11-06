@@ -52,7 +52,7 @@ class LoginController extends Controller
             Auth::login($user);
             return redirect()->to('/admin/usuario');
         } else {
-            return Redirect::back()->with('alert-danger', 'Username or password do not match.');
+            return redirect()->back()->with('errors', ['Datos de acceso incorrectos']);
         }
     }
 
