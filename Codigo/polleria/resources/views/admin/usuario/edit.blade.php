@@ -29,14 +29,15 @@
             </div>
             <div class="widget-content widget-content-area">
                 <form id="form-registro">
-                    <input name="_method" type="hidden" value="PUT"/>
+                   {{ method_field('PUT') }}
+                     
                     <input id="token" name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="form-group row mb-4">
                         <label class="col-sm-2 col-form-label col-form-label-sm text-right" for="colFormLabelSm">
                             Nombre
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="usu_nombres" required="" type="text" value="{{ $usuario->usu_nombres }}"/>
+                            <input class="form-control form-control-sm" name="usu_nombres" required="" type="text" value="{{  $admin->datosUsuario->usu_nombres }}"/>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
@@ -44,7 +45,7 @@
                             Apellido Paterno
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="usu_appaterno" required="" type="text" value="{{ $usuario->usu_appaterno }}">
+                            <input class="form-control form-control-sm" name="usu_appaterno" required="" type="text" value="{{ $admin->datosUsuario->usu_appaterno }}">
                             </input>
                         </div>
                     </div>
@@ -53,7 +54,7 @@
                             Apellido Materno
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="usu_apmaterno" required="" type="text" value="{{ $usuario->usu_apmaterno }}">
+                            <input class="form-control form-control-sm" name="usu_apmaterno" required="" type="text" value="{{ $admin->datosUsuario->usu_apmaterno }}">
                             </input>
                         </div>
                     </div>
@@ -62,7 +63,7 @@
                             Correo
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="usu_correo" required="" type="email" value="{{ $usuario->usu_correo }}">
+                            <input class="form-control form-control-sm" name="usu_correo" required="" type="email" value="{{ $admin->datosUsuario->usu_correo }}">
                             </input>
                         </div>
                     </div>
@@ -71,7 +72,7 @@
                             Telefono
                         </label>
                         <div class="col-sm-6">
-                            <input class="form-control form-control-sm" name="usu_telefono" required="" type="text" value="{{ $usuario->usu_telefono }}">
+                            <input class="form-control form-control-sm" name="usu_telefono" required="" type="text" value="{{ $admin->datosUsuario->usu_telefono }}">
                             </input>
                         </div>
                     </div>
@@ -109,16 +110,16 @@
 
 
         $("#form-registro").submit(function(e) {
-    event.preventDefault();
+  
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
-    var form = $(this);
+    var form = $(this); 
     
     
     $.ajax({
            type: "POST",
-           url: '{{ route('Admin.Usuario.Edit',['usuario' => $usuario]) }}',
+           url: '{{ route('Admin.Admin.Update',['administrador' => $admin]) }}',
             dataType:'json',
            data: form.serialize(), // serializes the form's elements.
            success: function(data)

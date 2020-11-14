@@ -6,22 +6,18 @@
 @endsection
 
 @section('content')
-
-
 <div class="col-full">
     <div class="content-area" id="primary">
         <main class="site-main" id="main">
             <div class="columns-3">
-
-
-          <ul class="products">
+                <ul class="products">
                     @foreach ($productos as $producto)
                     <li class="product border border-danger">
                         <div class="product-outer">
                             <div class="product-inner borde">
                                 <div class="product-image-wrapper">
                                     <a class="woocommerce-LoopProduct-link" href="#">
-                                        <img class="img-responsive"  src="{{ url(Storage::url('sistem/photos/' . $producto->prod_imagen)) }}" >
+                                        <img class="img-responsive" src="{{ url(Storage::url('sistem/photos/' . $producto->prod_imagen)) }}">
                                         </img>
                                     </a>
                                 </div>
@@ -40,9 +36,13 @@
                                         </p>
                                     </a>
                                     <div class="">
-                                        <a class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="51" data-product_sku="" data-quantity="1" href="#" rel="nofollow">
-                                            Agregar al carrito
-                                        </a>
+                                        <form action="{{route('Cart.Add')}}" method="post">
+                                            @csrf
+                                            <input name="id_producto" type="hidden" value="{{$producto->id_producto}}">
+                                                <input class="btn btn-success" name="btn" type="submit" value=" Agregar al carrito">
+                                                </input>
+                                            </input>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -65,6 +65,9 @@
 @endsection
 
 @section('script')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js">
+</script>
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css" id="theme-styles" rel="stylesheet">
 <script type="text/javascript">
     jQuery(function($) {
 
@@ -74,7 +77,7 @@
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
     var form = $(this);
-    
+
     
     $.ajax({
            type: "POST",
@@ -88,6 +91,18 @@
 
     
 });*/
+
+
+@if($errors->any())
+
+      Swal.fire({
+                                icon: 'success',
+                                title:'{{$errors->first()}}',
+                                showConfirmButton: false,
+                                timer: 2500
+                                })
+
+@endif
     })
 </script>
 @endsection

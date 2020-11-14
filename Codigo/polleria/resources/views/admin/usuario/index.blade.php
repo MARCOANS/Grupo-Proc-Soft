@@ -77,7 +77,7 @@
             "stripeClasses": [],
             "lengthMenu": [7, 10, 20, 50],
             "pageLength": 7 ,
-             "ajax": "{{ route('Admin.User.GetAll') }}"
+             "ajax": "{{ route('Admin.Admin.GetAll') }}"
         });
 
 

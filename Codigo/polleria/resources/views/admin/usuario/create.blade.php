@@ -161,13 +161,23 @@
     
     $.ajax({
            type: "POST",
-           url: '{{ route('Admin.Usuario.Store') }}',
+           url: '{{ route('Admin.Admin.Store') }}',
            data: form.serialize(), // serializes the form's elements.
            success: function(data)
            {
                Swal.fire(data.message);
                  $('#form-registro')[0].reset();
-           }
+           },
+            error : function(message) {
+                               console.log();
+                                Swal.fire({
+                                icon: 'warning',
+                                title: message.responseJSON.message,
+                                showConfirmButton: false,
+                                timer: 2500
+                                })
+        
+                            }
          });
 
     

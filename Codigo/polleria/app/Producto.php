@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use DB;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,7 +17,6 @@ class Producto extends Model
         'prod_precio',
         'id_categoria',
         'prod_imagen',
-
     ];
 
     public function listar()

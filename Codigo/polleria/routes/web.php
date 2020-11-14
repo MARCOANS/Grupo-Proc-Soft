@@ -13,66 +13,52 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('index');
-})->name('Site.Index');
+Route::get('/', function () {return view('index');})->name('Site.Index');
 
-Route::get('home', function () {
-    return redirect('/admin/usuario');
-});
+Route::get('home', function () {return redirect('/portal');});
+
+Route::resource('usuario', 'Admin\ClienteController', ['names' => ['store' => 'Usuario.Store']]);
 
 Route::get('/login', 'Auth\LoginController@login')->name('login')->middleware('guest');
 Route::post('login', 'Auth\LoginController@authenticate')->name('Authenticate');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-
 Route::get('ver/{name}/{categoria}', 'Admin\CatalogoController@productos')->name('Site.Catalogo');
 
 Route::group(['middleware' => 'auth'], function () {
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'Admin.'], function () {
+    Route::get('portal', function () {return view('portal');});
 
-    Route::group(['prefix' => 'producto'], function () {
-        Route::get('get', 'ProductoController@getAll')->name('Producto.GetAll');
-        Route::post('store2', 'ProductoController@store2')->name('Producto.Store2');
-        Route::get('searchliveProducto', 'ProductoController@SearchLive')->name('Producto.Search');
+    Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'Admin.'], function () {
 
-        Route::post('checkProducto', 'ProductoController@Check')->name('Producto.Check');
+        require (__DIR__ . '/routes/admin.php');
 
     });
 
-    Route::resource('producto', 'ProductoController',
-        ['names' => [
-            'index'   => 'Producto.Index',
-            'create'  => 'Producto.Create',
-            'store'   => 'Producto.Store',
-            'show'    => 'Producto.Show',
-            'edit'    => 'Producto.Edit',
-            'update'  => 'Producto.Update',
-            'destroy' => 'Producto.Destroy',
-        ]]);
+    //========================================================================
 
-    Route::group(['prefix' => 'user'], function () {
-        Route::get('get', 'UsuarioController@getAll')->name('User.GetAll');
-        Route::post('store2', 'ProductoController@store2')->name('Producto.Store2');
-        Route::get('searchliveProducto', 'ProductoController@SearchLive')->name('Producto.Search');
-        Route::post('checkProducto', 'ProductoController@Check')->name('Producto.Check');
+    Route::post('cart-add', 'CartController@add')->name('Cart.Add');
+    Route::get('view-cart', 'CartController@cart')->name('Cart.Show');
+    Route::post('cart-clear', 'CartController@clear')->name('Cart.Clear');
+    Route::post('cart-remove-item', 'CartController@removeitem')->name('Cart.RemoveItem');
+
+    Route::group(['prefix' => 'cliente', 'namespace' => 'Cliente', 'as' => 'Cliente.'], function () {
+
+        Route::group(['prefix' => 'pedido'], function () {
+            Route::get('get', 'PedidoController@getAll')->name('Pedido.GetAll');
+
+        });
+        Route::resource('pedido', 'PedidoController',
+            ['names' => [
+                'index'   => 'Pedido.Index',
+                'create'  => 'Pedido.Create',
+                'store'   => 'Pedido.Store',
+                'show'    => 'Pedido.Show',
+                'edit'    => 'Pedido.Edit',
+                'update'  => 'Pedido.Update',
+                'destroy' => 'Pedido.Destroy',
+            ]]);
 
     });
-    Route::resource('usuario', 'UsuarioController',
-        ['names' => [
-            'index'   => 'Usuario.Index',
-            'create'  => 'Usuario.Create',
-            'store'   => 'Usuario.Store',
-            'show'    => 'Usuario.Show',
-            'edit'    => 'Usuario.Edit',
-            'update'  => 'Usuario.Update',
-            'destroy' => 'Usuario.Destroy',
-        ]]);
 
 });
-
-});
-//Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');

@@ -36,7 +36,7 @@
                             Nombre
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="prod_nombre" type="text" value="{{ $producto->prod_nombre }}" required="">
+                            <input class="form-control form-control-sm" name="prod_nombre" type="text" value="{{ $producto->prod_nombre }}" required=""> 
                             </input>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                             Descripcion
                         </label>
                         <div class="col-sm-10">
-                            <textarea class="form-control form-control-sm" name="prod_descripcion">{{ $producto->prod_descripcion}}</textarea>
+                            <textarea class="form-control form-control-sm" name="prod_descripcion">{!! $producto->prod_descripcion!!}</textarea>
                         </div>
                     </div>
                     <div class="form-group row mb-4">

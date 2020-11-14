@@ -48,11 +48,11 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
 
-        if ($user = Usuario::where('usu_login', $request->username)->where('usu_password', $request->password)->first()) {
+        if ($user = Usuario::where('usu_login', $request->username)->where('usu_password', $request->password)->where('usu_deleted','0')->first()) {
             Auth::login($user);
-            return redirect()->to('/admin/usuario');
+            return redirect()->to('/portal');
         } else {
-            return Redirect::back()->with('alert-danger', 'Username or password do not match.');
+            return redirect()->back()->with('errors', ['Datos de acceso incorrectos']);
         }
     }
 

@@ -30,7 +30,7 @@
         </div>
         <ul class="list-unstyled menu-categories" id="accordionExample">
             <li class="menu {{ $activeUsuario ?? '' }}">
-                <a aria-expanded="{{ $expandedUsuario ?? 'false' }}" class="dropdown-toggle" data-toggle="collapse" href="#forms">
+                <a aria-expanded="{{ $expandedUsuario ?? 'false' }}" class="dropdown-toggle" data-toggle="collapse" href="#admins">
                     <div class="">
                         <svg class="feather feather-clipboard" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
@@ -39,7 +39,7 @@
                             </rect>
                         </svg>
                         <span>
-                            Usuarios
+                            Administradores
                         </span>
                     </div>
                     <div>
@@ -49,18 +49,56 @@
                         </svg>
                     </div>
                 </a>
-                <ul class="collapse submenu recent-submenu list-unstyled {{ $showUsuario ?? '' }}" data-parent="#accordionExample" id="forms">
+                <ul class="collapse submenu recent-submenu list-unstyled {{ $showUsuario ?? '' }}" data-parent="#accordionExample" id="admins">
                     <li class="{{ $activeUsuarioIndex ?? '' }}">
-                        <a href="{{ route('Admin.Usuario.Index') }}">
+                        <a href="{{ route('Admin.Admin.Index') }}">
                             Todos
                         </a>
                     </li>
                     <li class="{{ $activeUsuarioCreate ?? '' }}">
-                        <a href="{{ route('Admin.Usuario.Create') }}">
+                        <a href="{{ route('Admin.Admin.Create') }}">
                             Nuevo
                         </a>
                     </li>
                     <li class="{{ $activeUsuarioEdit ?? '' }}">
+                        <a href="#">
+                            Editar
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu {{ $activeCliente ?? '' }}">
+                <a aria-expanded="{{ $expandedCliente ?? 'false' }}" class="dropdown-toggle" data-toggle="collapse" href="#forms">
+                    <div class="">
+                        <svg class="feather feather-clipboard" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+                            </path>
+                            <rect height="4" rx="1" ry="1" width="8" x="8" y="2">
+                            </rect>
+                        </svg>
+                        <span>
+                            Clientes
+                        </span>
+                    </div>
+                    <div>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="9 18 15 12 9 6">
+                            </polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu recent-submenu list-unstyled {{ $showCliente ?? '' }}" data-parent="#accordionExample" id="forms">
+                    <li class="{{ $activeClienteIndex ?? '' }}">
+                        <a href="{{ route('Admin.Cliente.Index') }}">
+                            Todos
+                        </a>
+                    </li>
+                    <li class="{{ $activeClienteCreate ?? '' }}">
+                        <a href="{{ route('Admin.Cliente.Create') }}">
+                            Nuevo
+                        </a>
+                    </li>
+                    <li class="{{ $activeClienteEdit ?? '' }}">
                         <a href="#">
                             Editar
                         </a>
@@ -98,9 +136,42 @@
                             Nuevo
                         </a>
                     </li>
-                     <li class="{{ $activeProductoEdit ?? '' }}">
+                    <li class="{{ $activeProductoEdit ?? '' }}">
                         <a href="#">
                             Editar
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu {{ $activePedido ?? '' }}">
+                <a aria-expanded="{{ $expandedPedido ?? 'false' }}" class="dropdown-toggle" data-toggle="collapse" href="#pedidos">
+                    <div class="">
+                        <svg class="feather feather-clipboard" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+                            </path>
+                            <rect height="4" rx="1" ry="1" width="8" x="8" y="2">
+                            </rect>
+                        </svg>
+                        <span>
+                            Pedidos
+                        </span>
+                    </div>
+                    <div>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="9 18 15 12 9 6">
+                            </polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu recent-submenu list-unstyled {{ $showPedido ?? '' }}" data-parent="#accordionExample" id="pedidos">
+                    <li class="{{ $activePedidoIndex ?? '' }}">
+                        <a href="{{ route('Admin.Pedido.Index') }}">
+                            Todos
+                        </a>
+                    </li>
+                    <li class="{{ $activePedidoShow ?? '' }}">
+                        <a href="#">
+                            Ver
                         </a>
                     </li>
                 </ul>
