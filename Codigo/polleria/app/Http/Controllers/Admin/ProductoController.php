@@ -21,9 +21,6 @@ class ProductoController extends Controller
 
             $actionButton = '
              <div class="">
-                    <a class="text-blue"  href="' . route("Admin.Producto.Show", ["producto" => $producto->id_producto]) . '" >
-                    <i class="ace-icon fa fa-search-plus bigger-130" style="font-size: 20px;"></i>
-                    </a>
                     <a class="text-success" href="' . route("Admin.Producto.Edit", ["producto" => $producto->id_producto]) . '" >
                     <i class="fa fa-pen bigger-130" style="font-size: 20px;"></i>
                     </a>

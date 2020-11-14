@@ -1,15 +1,4 @@
-<style type="text/css">
-    .navbar {
-    padding: 0;
-    min-height: 80px;
-    background: #c00a27;
-    -webkit-transition: .3s ease all;
-    transition: .3s ease all;
-    -webkit-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
-    -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
-    box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
-}
-</style>
+
 <div class="sidebar-wrapper sidebar-theme">
     <nav id="sidebar">
         <div class="profile-info">
@@ -39,7 +28,7 @@
                             </rect>
                         </svg>
                         <span>
-                            Administradores
+                           Pedidos
                         </span>
                     </div>
                     <div>
@@ -49,25 +38,21 @@
                         </svg>
                     </div>
                 </a>
-                <ul class="collapse submenu recent-submenu list-unstyled {{ $showUsuario ?? '' }}" data-parent="#accordionExample" id="admins">
-                    <li class="{{ $activeUsuarioIndex ?? '' }}">
-                        <a href="{{ route('Admin.Admin.Index') }}">
+                <ul class="collapse submenu recent-submenu list-unstyled {{ $showPedido ?? '' }}" data-parent="#accordionExample" id="admins">
+                    <li class="{{ $activePedidoIndex ?? '' }}">
+                        <a href="{{ route('Cliente.Pedido.Index') }}">
                             Todos
                         </a>
                     </li>
-                    <li class="{{ $activeUsuarioCreate ?? '' }}">
-                        <a href="{{ route('Admin.Admin.Create') }}">
-                            Nuevo
-                        </a>
-                    </li>
-                    <li class="{{ $activeUsuarioEdit ?? '' }}">
+                  
+                    <li class="{{ $activePedidoShow ?? '' }}">
                         <a href="#">
-                            Editar
+                            Ver
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="menu {{ $activeCliente ?? '' }}">
+            {{-- <li class="menu {{ $activeCliente ?? '' }}">
                 <a aria-expanded="{{ $expandedCliente ?? 'false' }}" class="dropdown-toggle" data-toggle="collapse" href="#forms">
                     <div class="">
                         <svg class="feather feather-clipboard" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +62,7 @@
                             </rect>
                         </svg>
                         <span>
-                            Clientes
+                           Clientes
                         </span>
                     </div>
                     <div>
@@ -136,46 +121,13 @@
                             Nuevo
                         </a>
                     </li>
-                    <li class="{{ $activeProductoEdit ?? '' }}">
+                     <li class="{{ $activeProductoEdit ?? '' }}">
                         <a href="#">
                             Editar
                         </a>
                     </li>
                 </ul>
-            </li>
-            <li class="menu {{ $activePedido ?? '' }}">
-                <a aria-expanded="{{ $expandedPedido ?? 'false' }}" class="dropdown-toggle" data-toggle="collapse" href="#pedidos">
-                    <div class="">
-                        <svg class="feather feather-clipboard" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
-                            </path>
-                            <rect height="4" rx="1" ry="1" width="8" x="8" y="2">
-                            </rect>
-                        </svg>
-                        <span>
-                            Pedidos
-                        </span>
-                    </div>
-                    <div>
-                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="9 18 15 12 9 6">
-                            </polyline>
-                        </svg>
-                    </div>
-                </a>
-                <ul class="collapse submenu recent-submenu list-unstyled {{ $showPedido ?? '' }}" data-parent="#accordionExample" id="pedidos">
-                    <li class="{{ $activePedidoIndex ?? '' }}">
-                        <a href="{{ route('Admin.Pedido.Index') }}">
-                            Todos
-                        </a>
-                    </li>
-                    <li class="{{ $activePedidoShow ?? '' }}">
-                        <a href="#">
-                            Ver
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            </li> --}}
         </ul>
     </nav>
 </div>

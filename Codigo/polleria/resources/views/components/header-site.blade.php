@@ -39,9 +39,7 @@
                                 Nosotros
                             </a>
                         </li>
-                      
-                        
-                       <li class="menu-item">
+                        <li class="menu-item">
                             <a href="{{ route('login') }}">
                                 Login
                             </a>
@@ -95,30 +93,33 @@
             <div class="header-info-wrapper">
                 <div class="header-phone-numbers">
                     <span class="intro-text">
-                       Llamar y ordenar
+                        Llamar y ordenar
                     </span>
-              
                     <span class="phone-number" id="city-phone-number-label">
-                       997 656 343
+                        997 656 343
                     </span>
                 </div>
                 <ul class="site-header-cart-v2 menu">
                     <li class="cart-content ">
-                        <a href="#" title="View your shopping cart">
+                        <a href="{{route('Cart.Show')}}" title="View your shopping cart">
                             <i class="po po-scooter">
                             </i>
                             <span>
-                              Ir al carrito
+                                Ir al carrito
                             </span>
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="#" title="View your shopping cart">
+                                <a href="{{route('Cart.Show')}}" title="View your shopping cart">
                                     <span class="count">
-                                        2 items
+                                        @if (count(Cart::getContent()))
+                                          {{count(Cart::getContent())}} items
+                                        @endif
                                     </span>
                                     <span class="amount">
-                                        $50.00
+                                        @if (count(Cart::getContent()))
+                                          S/.{{Cart::getTotal()}} 
+                                        @endif
                                     </span>
                                 </a>
                             </li>

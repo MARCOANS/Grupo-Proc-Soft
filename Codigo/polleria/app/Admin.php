@@ -2,27 +2,27 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Cliente extends Model
+class Admin extends Authenticatable
 {
-    protected $table      = 'tbl_cliente';
-    protected $primaryKey = 'id_cliente';
+    protected $table      = 'tbl_admin';
+    protected $primaryKey = 'id_admin';
     public $timestamps    = false;
 
     protected $fillable = [
-        'cli_estado',
         'id_usuario',
-
+        'estado',
     ];
 
     public function listar()
     {
-        return Cliente::All()->where('cli_estado', 'Activo');
+        return Admin::All()->where('estado', 'Activo');
     }
 
     public function datosUsuario()
     {
         return $this->belongsTo('App\User', 'id_usuario');
     }
+
 }

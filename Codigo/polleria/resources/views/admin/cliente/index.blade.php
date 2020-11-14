@@ -6,7 +6,7 @@
 @endsection
 
 @section('menu')
-@component('components.dashboard.menu',['activeUsuario'=>'active','expandedUsuario'=>'true','showUsuario'=>'show','activeUsuarioIndex'=>'active'])
+@component('components.dashboard.menu',['activeCliente'=>'active','expandedCliente'=>'true','showCliente'=>'show','activeClienteIndex'=>'active'])
 @endcomponent
 @endsection
 
@@ -77,7 +77,7 @@
             "stripeClasses": [],
             "lengthMenu": [7, 10, 20, 50],
             "pageLength": 7 ,
-             "ajax": "{{ route('Admin.Admin.GetAll') }}"
+             "ajax": "{{ route('Admin.Cliente.GetAll') }}"
         });
 
 

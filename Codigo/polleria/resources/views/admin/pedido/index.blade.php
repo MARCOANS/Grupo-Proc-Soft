@@ -6,7 +6,7 @@
 @endsection
 
 @section('menu')
-@component('components.dashboard.menu',['activeUsuario'=>'active','expandedUsuario'=>'true','showUsuario'=>'show','activeUsuarioIndex'=>'active'])
+@component('components.dashboard.menu',['activePedido'=>'active','expandedPedido'=>'true','showPedido'=>'show','activePedidoIndex'=>'active'])
 @endcomponent
 @endsection
 
@@ -18,26 +18,25 @@
 @endsection
 
 @section('content')
- <input id="token" name="_token" type="hidden" value="{{csrf_token() }}"/>
+<input id="token" name="_token" type="hidden" value="{{csrf_token() }}"/>
 <div class="table-responsive mb-4 mt-4">
     <table class="table table-hover" id="zero-config" style="width:100%">
         <thead>
             <tr>
                 <th>
-                    Nombres
+                    #
+                </th>
+                <th>Cliente</th>
+                <th>
+                    Direccion de entrega
                 </th>
                 <th>
-                    Ap Paterno
+                    Fecha de pedido
                 </th>
                 <th>
-                    Ap Materno
+                    Estado
                 </th>
-                <th>
-                    Correo
-                </th>
-                <th>
-                    Telefono
-                </th>
+                <th></th>
                 <th class="no-content">
                 </th>
             </tr>
@@ -47,9 +46,6 @@
     </table>
 </div>
 
-
-
-
 @endsection
 
 @section('footer')
@@ -58,12 +54,13 @@
 @endsection
 
 @section('script')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css" id="theme-styles">
-<script src="{{asset('assets/dashboard/js/datatables.js') }}">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js">
 </script>
-<script type="text/javascript">
-  var myTable;   
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css" id="theme-styles" rel="stylesheet">
+    <script src="{{asset('assets/dashboard/js/datatables.js') }}">
+    </script>
+    <script type="text/javascript">
+        var myTable;   
     jQuery(function($) {
 
      myTable=  $('#zero-config').DataTable({
@@ -77,7 +74,7 @@
             "stripeClasses": [],
             "lengthMenu": [7, 10, 20, 50],
             "pageLength": 7 ,
-             "ajax": "{{ route('Admin.Admin.GetAll') }}"
+             "ajax": "{{ route('Admin.Pedido.GetAll') }}"
         });
 
 
@@ -85,41 +82,30 @@
 
     })
 
-  function deleteUsuario(ruta) {
-        
-    Swal.fire({
-        title: 'Desea eliminar este registro ?',
-        text: "La accion no se podra revertir!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si,eliminar !',
-    }).then((result) => {
-        if (result.value) {
- token = $("#token").val();
-              $.ajax({
-               url: ruta,
-               method: 'POST',
-               dataType: 'json',
-               data: {
-                _token:token,
-                  _method: "DELETE",
-               }, success: function (msg) {
-                
-                  myTable.ajax.reload();
-                    Swal.fire('Eliminado', msg.message, 'success')
-                   
-               }
-               ,
-            error: function(msg) {
-                Swal.fire('Error!', msg.message, 'error')
-            }
-            });
-            
-        }
-    })
-}
-</script>
-@endsection
+
+function updateEstado(ruta,estado){
+
+    token=$("#token").val();
+   console.log(estado);
+    $.ajax({
+      url: ruta,
+      type:'Post',
+      data:{_token:token,_method:"PUT",estado:estado},
+      dataType:'json',
+      success:function(message) {
+        Swal.fire({
+                icon: 'success',
+                title: message.message,
+                showConfirmButton: false,
+                timer: 2500
+                })
+
+        myTable.ajax.reload();
+      } 
+    });
+
+
+    }
+    </script>
+    @endsection
+</link>

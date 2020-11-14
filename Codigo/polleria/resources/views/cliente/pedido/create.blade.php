@@ -6,7 +6,7 @@
 @endsection
 
 @section('menu')
-@component('components.dashboard.menu',['activeUsuario'=>'active','expandedUsuario'=>'true','showUsuario'=>'show','activeUsuarioCreate'=>'active'])
+@component('components.dashboard.menu',['activeCliente'=>'active','expandedCliente'=>'true','showCliente'=>'show','activeClienteCreate'=>'active'])
 @endcomponent
 @endsection
 
@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12 col-12 text-center">
                         <h4>
-                            Registro de usuarios
+                            Registro de clientes
                         </h4>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
     
     $.ajax({
            type: "POST",
-           url: '{{ route('Admin.Admin.Store') }}',
+           url: '{{ route('Admin.Cliente.Store') }}',
            data: form.serialize(), // serializes the form's elements.
            success: function(data)
            {

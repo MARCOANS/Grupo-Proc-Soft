@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
 
 @section('header')
-@component('components.dashboard.header')
+@component('components.dashboard-cliente.header')
 @endcomponent
 @endsection
 
 @section('menu')
-@component('components.dashboard.menu',['activeUsuario'=>'active','expandedUsuario'=>'true','showUsuario'=>'show','activeUsuarioIndex'=>'active'])
+@component('components.dashboard-cliente.menu',['activePedido'=>'active','expandedPedido'=>'true','showPedido'=>'show','activePedidoIndex'=>'active'])
 @endcomponent
 @endsection
 
@@ -24,20 +24,18 @@
         <thead>
             <tr>
                 <th>
-                    Nombres
+                   #
                 </th>
                 <th>
-                    Ap Paterno
+                    Direccion de entrega
                 </th>
                 <th>
-                    Ap Materno
+                    Fecha de pedido
                 </th>
                 <th>
-                    Correo
+                    Estado
                 </th>
-                <th>
-                    Telefono
-                </th>
+               
                 <th class="no-content">
                 </th>
             </tr>
@@ -77,7 +75,7 @@
             "stripeClasses": [],
             "lengthMenu": [7, 10, 20, 50],
             "pageLength": 7 ,
-             "ajax": "{{ route('Admin.Admin.GetAll') }}"
+             "ajax": "{{ route('Cliente.Pedido.GetAll') }}"
         });
 
 

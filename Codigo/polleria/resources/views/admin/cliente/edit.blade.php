@@ -6,7 +6,7 @@
 @endsection
 
 @section('menu')
-@component('components.dashboard.menu',['activeUsuario'=>'active','expandedUsuario'=>'true','showUsuario'=>'show','activeUsuarioEdit'=>'active'])
+@component('components.dashboard.menu',['activeCliente'=>'active','expandedCliente'=>'true','showCliente'=>'show','activeClienteEdit'=>'active'])
 @endcomponent
 @endsection
 
@@ -22,22 +22,21 @@
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12 col-12 text-center">
                         <h4>
-                            Actualizar Usuario
+                            Actualizar Cliente
                         </h4>
                     </div>
                 </div>
             </div>
             <div class="widget-content widget-content-area">
                 <form id="form-registro">
-                   {{ method_field('PUT') }}
-                     
+                    {{ method_field('PUT') }}
                     <input id="token" name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="form-group row mb-4">
                         <label class="col-sm-2 col-form-label col-form-label-sm text-right" for="colFormLabelSm">
                             Nombre
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="usu_nombres" required="" type="text" value="{{  $admin->datosUsuario->usu_nombres }}"/>
+                            <input class="form-control form-control-sm" name="usu_nombres" required="" type="text" value="{{  $cliente->datosUsuario->usu_nombres }}"/>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
@@ -45,7 +44,7 @@
                             Apellido Paterno
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="usu_appaterno" required="" type="text" value="{{ $admin->datosUsuario->usu_appaterno }}">
+                            <input class="form-control form-control-sm" name="usu_appaterno" required="" type="text" value="{{ $cliente->datosUsuario->usu_appaterno }}">
                             </input>
                         </div>
                     </div>
@@ -54,7 +53,7 @@
                             Apellido Materno
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="usu_apmaterno" required="" type="text" value="{{ $admin->datosUsuario->usu_apmaterno }}">
+                            <input class="form-control form-control-sm" name="usu_apmaterno" required="" type="text" value="{{ $cliente->datosUsuario->usu_apmaterno }}">
                             </input>
                         </div>
                     </div>
@@ -63,7 +62,7 @@
                             Correo
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-sm" name="usu_correo" required="" type="email" value="{{ $admin->datosUsuario->usu_correo }}">
+                            <input class="form-control form-control-sm" name="usu_correo" required="" type="email" value="{{ $cliente->datosUsuario->usu_correo }}">
                             </input>
                         </div>
                     </div>
@@ -72,7 +71,7 @@
                             Telefono
                         </label>
                         <div class="col-sm-6">
-                            <input class="form-control form-control-sm" name="usu_telefono" required="" type="text" value="{{ $admin->datosUsuario->usu_telefono }}">
+                            <input class="form-control form-control-sm" name="usu_telefono" required="" type="text" value="{{ $cliente->datosUsuario->usu_telefono }}">
                             </input>
                         </div>
                     </div>
@@ -119,7 +118,7 @@
     
     $.ajax({
            type: "POST",
-           url: '{{ route('Admin.Admin.Update',['administrador' => $admin]) }}',
+           url: '{{ route('Admin.Cliente.Update',['cliente' => $cliente]) }}',
             dataType:'json',
            data: form.serialize(), // serializes the form's elements.
            success: function(data)
