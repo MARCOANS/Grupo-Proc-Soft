@@ -91,6 +91,26 @@
         </div>
     </div>
 </div>
+
+ @switch($pedido->estado_pago)
+        
+
+        @case('Pagado')
+        <div class=" btn btn-block btn-success alert alert-warning mb-4" role="alert">
+            <strong>
+               Pagado
+            </strong>
+        </div>
+        @break
+        
+
+         @default
+         <div class=" btn btn-block btn-danger alert alert-warning mb-4" role="alert">
+            <strong>
+            Pago Pendiente
+            </strong>
+        </div>
+        @endswitch
 @endsection
 
 @section('footer')

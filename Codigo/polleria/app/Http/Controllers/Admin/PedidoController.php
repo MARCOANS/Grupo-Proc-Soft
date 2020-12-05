@@ -51,6 +51,7 @@ class PedidoController extends Controller
                 $pedido->lugarentrega,
                 $pedido->ped_fcreacion,
                 $this->labelEstado($pedido->estado),
+                $this->labelPago($pedido->estado_pago),
                 $input,
                 $actionButton,
 
@@ -127,6 +128,22 @@ class PedidoController extends Controller
                 break;
             case 'Entregado':
                 $label = '<span class="badge badge-success">' . $value . '</span>';
+                break;
+        }
+
+        return $label;
+    }
+
+    public function labelPago($value)
+    {
+        
+        $label = '';
+        switch ($value) {
+            case 'Pagado':
+                $label = '<span class="badge badge-success">' . $value . '</span>';
+                break;
+            default:
+                $label = '<span class="badge badge-danger">Pendiente</span>';
                 break;
         }
 
