@@ -43,10 +43,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('cart-remove-item', 'CartController@removeitem')->name('Cart.RemoveItem');
 
     Route::group(['prefix' => 'cliente', 'namespace' => 'Cliente', 'as' => 'Cliente.'], function () {
-
+        Route::get('paypal/pay', 'PaymentController@payWithPayPal')->name('Pay');
+        Route::get('paypal/status', 'PaymentController@payPalStatus')->name('PayStatus');
         Route::group(['prefix' => 'pedido'], function () {
             Route::get('get', 'PedidoController@getAll')->name('Pedido.GetAll');
-
+            Route::post('update-pago/{pedido}', 'PedidoController@updatePago')->name('Pedido.UpdatePago');
         });
         Route::resource('pedido', 'PedidoController',
             ['names' => [

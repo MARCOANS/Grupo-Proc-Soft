@@ -57,6 +57,7 @@ class PedidoController extends Controller
         $pedido->id_cliente    = auth()->user()->cliente->id_cliente;
         $pedido->lugarentrega  = $request->lugarentrega;
         $pedido->estado        = 'Generado';
+        $pedido->estado_pago        = 'Pendiente';
         $pedido->save();
 
         foreach ($cart as $item) {
@@ -79,5 +80,28 @@ class PedidoController extends Controller
     public function show(Pedido $pedido)
     {
         return view('cliente.pedido.show', ['pedido' => $pedido]);
+    }
+
+
+    public function updatePago(Pedido $pedido,Request $request)
+    {
+
+
+        $pedido->estado_pago='Pagado';
+        $pedido->save();
+
+         return response()->json(['message'=>'Ok']);
+        /*$clientId='AaWKblhcwwBuOvIeheXUQ86WRflhTE9zCoSD73n_L3dn3tRs4gsevoPXgN4fO9H3S3IDZRW_6dX9kjL9';
+        $secret='EM_MPhgC2WPwG5_3hfxnAWh_1U44CH2T8Aco1lxnLzAZBVWpvuTD-gWH6mgVjb1Tyxv24BT4vqDvyaA9';
+
+        $login=curl_init("https://api.sandbox.paypal.com/v1/oauth2/token");
+        curl_setopt($login,CURLOPT_RETURNTRANSFER,TRUE);
+        curl_setopt($login,CURLOPT_USERPWD,$clientId.":".$secret);
+        curl_setopt($login,CURLOPT_POSTFIELDS ,"grant_type=cliente_credentials");
+        $respuesta=curl_exec($login);
+        print_r($respuesta);*/
+
+       //$objRespuesta=json_decode($respuesta);
+        //$accessToken=$objRespuesta->access_token;
     }
 }

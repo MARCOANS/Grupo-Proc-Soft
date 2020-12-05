@@ -36,6 +36,9 @@
                 <th>
                     Estado
                 </th>
+                <th>
+                    Estado Pago
+                </th>
                 <th></th>
                 <th class="no-content">
                 </th>
